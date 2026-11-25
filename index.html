@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ezer Ayari · Full-stack developer</title>
+<meta name="description" content="Ezer Ayari: full-stack developer (Node.js, Next.js, Python). Projects: Light Sync, HA Dashboard, a Next.js messages app, Clash Tracker.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf9; --surface: #ffffff; --text: #1c1917; --muted: #57534e; --line: #e7e5e4;
+    --accent: #0f766e; --accent-soft: #ccfbf1; --chip: #f5f5f4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e; --line: #292524;
+            --accent: #2dd4bf; --accent-soft: #134e4a; --chip: #292524; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 72px 0 40px; }
+  .kicker { font: 500 13px "JetBrains Mono", monospace; color: var(--accent); letter-spacing: .04em; }
+  h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 8px 0 16px; letter-spacing: -.02em; }
+  .lead { font-size: 18px; color: var(--muted); max-width: 640px; margin: 0; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .btn { display: inline-block; padding: 9px 16px; border-radius: 8px; text-decoration: none; font-weight: 600;
+         font-size: 14px; border: 1px solid var(--line); color: var(--text); background: var(--surface); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 48px 0 16px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px;
+          display: flex; flex-direction: column; }
+  .card.feature { grid-column: 1 / -1; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+  .tag { font: 500 12px "JetBrains Mono", monospace; background: var(--chip); padding: 3px 8px; border-radius: 6px; }
+  .card a.more { margin-top: 14px; color: var(--accent); font-weight: 600; font-size: 14px; text-decoration: none; }
+  .card a.more:hover, .btn:hover { opacity: .85; }
+  .status { font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft);
+            padding: 2px 8px; border-radius: 99px; margin-left: 8px; vertical-align: middle; }
+  ul.points { margin: 0 0 14px; padding-left: 18px; color: var(--muted); font-size: 15px; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  footer { padding: 48px 0 40px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">FULL-STACK DEVELOPER</div>
+    <h1>Ezer Ayari</h1>
+    <p class="lead">I build web apps with Node.js, Next.js and Python, and I like projects that run in the real world.
+      My room's lights, cameras and TV run on a Raspberry Pi system I wrote.</p>
+    <div class="links">
+      <a class="btn primary" href="https://github.com/ezerayarii">GitHub</a>
+      <a class="btn" href="#projects">Projects</a>
+    </div>
+  </header>
+
+  <h2 id="projects">Projects</h2>
+  <div class="grid">
+    <div class="card feature">
+      <h3>Light Sync <span class="status">in progress</span></h3>
+      <p>Local-first smart lighting on a Raspberry Pi 5 with Home Assistant. Three Govee lights follow music, the TV
+        picture and PC games, and turn off when the room is empty.</p>
+      <ul class="points">
+        <li>Real-time computer vision with numpy: 45-point perspective-mapped TV colour sampling</li>
+        <li>Camera presence with a MoveNet pose model on ONNX Runtime, frames kept in memory only</li>
+        <li>23-command Telegram bot with an approval flow (Yes / No, Undo), and a mobile web app</li>
+        <li>Deployed as two Docker add-ons with a self-updater; Home Assistant set up by 18 scripts</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">numpy</span><span class="tag">ONNX Runtime</span>
+        <span class="tag">Home Assistant</span><span class="tag">Docker</span><span class="tag">UDP</span></div>
+      <a class="more" href="https://github.com/ezerayarii/light-sync">View code →</a>
+    </div>
+    <div class="card">
+      <h3>HA Dashboard</h3>
+      <p>Self-hosted smart home control panel. An Express server keeps the Home Assistant token server-side and
+        pushes live states over Socket.IO; a command bar turns plain English into actions.</p>
+      <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Socket.IO</span></div>
+      <a class="more" href="https://github.com/ezerayarii/ha-dashboard">View code →</a>
+    </div>
+    <div class="card">
+      <h3>Next.js Messages App</h3>
+      <p>Full-stack Next.js site: a contact form saved to PostgreSQL through Prisma server actions, a messages page
+        and GitHub sign-in with Auth.js.</p>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">Auth.js</span></div>
+      <a class="more" href="https://github.com/ezerayarii/nextjs-auth-messages">View code →</a>
+    </div>
+    <div class="card">
+      <h3>Clash Tracker</h3>
+      <p>Tracks Clash Royale players: a timed poller saves every battle to PostgreSQL and the app shows each deck's
+        win rate.</p>
+      <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span></div>
+      <a class="more" href="https://github.com/ezerayarii/clash-tracker">View code →</a>
+    </div>
+    <div class="card">
+      <h3>La Pinsa Mia Locator</h3>
+      <p>ZIP-code market finder with an interactive map, an admin panel to manage markets and search analytics.</p>
+      <div class="tags"><span class="tag">JavaScript</span><span class="tag">Leaflet</span><span class="tag">Tailwind</span></div>
+      <a class="more" href="https://ezerayarii.github.io/la-pinsa-mia-locator/">Live demo →</a>
+      <a class="more" style="margin-top:4px" href="https://github.com/ezerayarii/la-pinsa-mia-locator">View code →</a>
+    </div>
+  </div>
+
+  <h2>Tools</h2>
+  <div class="skills">
+    <span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Python</span>
+    <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Next.js</span><span class="tag">React</span>
+    <span class="tag">PostgreSQL</span><span class="tag">Prisma</span><span class="tag">Socket.IO</span><span class="tag">Docker</span>
+    <span class="tag">Linux / Raspberry Pi</span><span class="tag">Home Assistant</span><span class="tag">Git</span>
+  </div>
+
+  <footer>Built by Ezer Ayari. I use AI coding tools (Claude Code) as a pair programmer.</footer>
+</div>
+</body>
+</html>
